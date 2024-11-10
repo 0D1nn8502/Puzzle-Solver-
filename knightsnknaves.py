@@ -48,7 +48,7 @@ def parse_and_create_constraints(sentence):
             solver.add(Implies(speaker, Not(subject)))
             constraints.append(Implies(speaker, Not(subject))) 
             
-    elif role == "knight":
+    elif role == "knight" or role == "knights": 
         
         # Speaker claims subject(s) are knights
         for subject in subjects:
@@ -58,7 +58,7 @@ def parse_and_create_constraints(sentence):
 # Example statements
 statements = [
     "A says B is a knave",
-    "B says both A and B are knights"
+    "B says A and B are knights"  
 ]
 
 # Process each statement and create constraints
@@ -77,3 +77,4 @@ else:
 
 
 print(constraints)
+
